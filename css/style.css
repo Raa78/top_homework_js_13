@@ -1,0 +1,25 @@
+:root {
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  /* background-color: rgb(255, 202, 193); */
+}
+
+.container {
+
+}
+
+.wrapper {
+
+}
