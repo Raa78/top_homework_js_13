@@ -54,7 +54,7 @@ function addInHTML(elem, time) {
 }
 
 
-const btn = document.querySelectorAll('.btn');
+const btn = element.querySelectorAll('.btn');
 
 btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnCountdown') {
