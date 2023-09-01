@@ -45,7 +45,7 @@ function timer(addTimerInHTML) {
 function addInHTML(elem, time) {
 
     let hours = Math.floor(time / 3600);
-    let minutes = Math.floor(time / 60 - hours * 60);
+    let minutes = Math.floor(time / 60 % 60);
     let seconds = time % 60;
 
     let display = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
@@ -57,6 +57,7 @@ function addInHTML(elem, time) {
 const btn = element.querySelectorAll('.btn');
 
 btn.forEach((button) => button.addEventListener('click', () => {
+
     if (button.id === 'btnCountdown') {
         console.log('click Countdown');
 
@@ -75,7 +76,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
         clearInterval(countdown);
         valueTimeCountdown = counter(0);
 
-        let display = `00:00:00`;
+        let display = '00:00:00';
         element.querySelector('.result').innerHTML = display;
     }
 
@@ -83,11 +84,17 @@ btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnPause') {
         console.log('click Pause');
         clearInterval(countdown);
+        element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
+            button.classList.toggle('btn_hide');
+        });
     }
 
     if (button.id === 'btnPlay') {
         console.log('click Play');
         timer(addInHTML);
+        element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
+            button.classList.toggle('btn_hide');
+        });
     }
 })
 );

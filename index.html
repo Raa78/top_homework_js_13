@@ -22,41 +22,46 @@
 
       <div class="wrapper">
 
+        <div class="timerCountdown_">
+
+        </div>
+
+
         <div class="timerCountdown_time-entry">
           <form>
             <table class="table">
               <thead>
                 <tr>
                   <th>
-                    <span>Часы</span>
+                    <span class="size">Часы</span>
                   </th>
                   <th></th>
-                  <th>
+                  <th class="size">
                     <span>
                       Минуты
                     </span>
                   </th>
                   <th></th>
-                  <th>
+                  <th class="size">
                     <span>Секунды</span>
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th>
+                  <th class="size">
                     <input type="number" id="hours" min="0" max="24" value="00" />
                   </th>
                   <th>
                     <span>:</span>
                   </th>
-                  <th>
+                  <th class="size">
                     <input type="number" id="minutes" min="0" max="59" value="00" />
                   </th>
                   <th>
                     <span>:</span>
                   </th>
-                  <th>
+                  <th class="size">
                     <input type="number" id="seconds" min="0" max="59" value="00" />
                   </th>
                 </tr>
@@ -75,6 +80,7 @@
           <div class="display">
             <div class="result">
 
+
             </div>
           </div>
 
@@ -82,12 +88,14 @@
             <button data-num='2' class="btn btn-circle" id="btnReset">
               <i class="fa-solid fa-xmark"></i>
             </button>
-            <button data-num='2' class="btn btn-circle" id="btnPause">
-              <i class="fa-solid fa-pause"></i>
-            </button>
-            <button data-num='3' class="btn btn-circle" id="btnPlay">
-              <i class="fa-solid fa-forward"></i>
-            </button>
+            <div class="btnPausePlay">
+              <button data-num='2' class="btn btn-circle" id="btnPause">
+                <i class="fa-solid fa-pause"></i>
+              </button>
+              <button data-num='3' class="btn btn-circle btn_hide" id="btnPlay">
+                <i class="fa-solid fa-forward"></i>
+              </button>
+            </div>
           </div>
 
         </div>

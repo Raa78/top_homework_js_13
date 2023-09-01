@@ -59,7 +59,11 @@ body {
 }
 
 .timerCountdown_time-entry table th {
-  width: 50px;
+  padding: 5px;
+}
+
+.timerCountdown_time-entry table th.size {
+  width: 70px;
 }
 
 .timerCountdown_time-entry span,
@@ -111,4 +115,10 @@ body {
 .btn-circle > i {
   font-size: 30px;
   color: #fff;
+}
+
+
+
+.timerCountdown .btn_hide {
+  display: none;
 }
