@@ -64,7 +64,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
         let timeCountdowninSeconds = hours * 3600 + minutes * 60 + seconds;
 
         valueTimeCountdown = counter(timeCountdowninSeconds);
-        timer(valueTimeCountdown.value());
+        timer();
     }
 
     if (button.id === 'btnReset') {
@@ -84,7 +84,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
     if (button.id === 'btnPlay') {
         console.log('click Play');
-        timer(valueTimeCountdown.value());
+        timer();
     }
 })
 );
