@@ -1,5 +1,8 @@
 'use strict'
 
+const element = document.querySelector('.timerCountdown');
+
+
 function counter(arg) { // путем замыкания делаем независисимые счетчики
     let privateCounter = arg;
 
@@ -15,17 +18,18 @@ function counter(arg) { // путем замыкания делаем незав
 
 let valueTimeCountdown = counter();  // Инициализируем счетчик через функцию с замыканимем
 
-const element = document.querySelector('.container');
-
 
 let countdown;  // Инициализируем перменную для setInterval()
 
-function timer() {
+function timer(addTimerInHTML) {
     clearInterval(countdown);
+
+    let elem = element.querySelector('.result');
+
 
     countdown = setInterval(() => {
 
-        addTimerInHTML(valueTimeCountdown.value());
+        addTimerInHTML(elem, valueTimeCountdown.value());
 
         if (valueTimeCountdown.value() === 0) {
             clearInterval(countdown);
@@ -37,9 +41,8 @@ function timer() {
     }, 250)
 }
 
-let elDisplay = document.querySelector('.result');
 
-function addTimerInHTML(time) {
+function addInHTML(elem, time) {
 
     let hours = Math.floor(time / 3600);
     let minutes = Math.floor(time / 60 - hours * 60);
@@ -47,7 +50,7 @@ function addTimerInHTML(time) {
 
     let display = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
-    elDisplay.innerHTML = display;
+    elem.innerHTML = display;
 }
 
 
@@ -64,7 +67,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
         let timeCountdowninSeconds = hours * 3600 + minutes * 60 + seconds;
 
         valueTimeCountdown = counter(timeCountdowninSeconds);
-        timer();
+        timer(addInHTML);
     }
 
     if (button.id === 'btnReset') {
@@ -73,7 +76,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
         valueTimeCountdown = counter(0);
 
         let display = `00:00:00`;
-        elDisplay.innerHTML = display;
+        element.querySelector('.result').innerHTML = display;
     }
 
 
@@ -84,7 +87,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
     if (button.id === 'btnPlay') {
         console.log('click Play');
-        timer();
+        timer(addInHTML);
     }
 })
 );
