@@ -83,18 +83,23 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
     if (button.id === 'btnPause') {
         console.log('click Pause');
-        clearInterval(countdown);
-        element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
-            button.classList.toggle('btn_hide');
-        });
+        if (valueTimeCountdown.value() > 0) {  // делаем проверку тймеры > 0, что бы просто так не менять кнопку
+            clearInterval(countdown);
+            element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
+                button.classList.toggle('btn_hide');
+            });
+        }
     }
 
     if (button.id === 'btnPlay') {
         console.log('click Play');
-        timer(addInHTML);
-        element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
-            button.classList.toggle('btn_hide');
-        });
+        if (valueTimeCountdown.value() > 0) {  // делаем проверку тймеры > 0, что бы просто так не менять кнопку
+            timer(addInHTML);
+            element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
+                button.classList.toggle('btn_hide');
+            });
+        }
     }
+
 })
 );
