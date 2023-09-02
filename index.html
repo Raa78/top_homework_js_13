@@ -18,89 +18,100 @@
 
   <div class="container ">
 
-    <div class="timerCountdown">
+    <div class="timers">
 
-      <div class="wrapper">
+      <div class="timerCountdown">
+        <div class="wrapper">
 
-        <div class="timerCountdown_">
+          <div class="timerCountdown_header">
+          </div>
 
-        </div>
+          <div class="timerCountdown_time-entry">
+            <form>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="size">
+                      <span>
+                        Hours
+                      </span>
+                    </th>
+                    <th>
+                      <span>&nbsp</span>
+                    </th>
+                    <th class="size">
+                      <span>
+                        Minutes
+                      </span>
+                    </th>
+                    <th>
+                      <span>&nbsp</span>
+                    </th>
+                    <th class="size">
+                      <span>
+                        Seconds
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="size">
+                      <input type="number" id="hours" min="0" max="24" value="00" />
+                    </th>
+                    <th>
+                      <span>:</span>
+                    </th>
+                    <th class="size">
+                      <input type="number" id="minutes" min="0" max="59" value="00" />
+                    </th>
+                    <th>
+                      <span>:</span>
+                    </th>
+                    <th class="size">
+                      <input type="number" id="seconds" min="0" max="59" value="00" />
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
 
+              <div class="button">
+                <button data-num='1' class="btn" id="btnCountdown" type="reset">
+                  <span>
+                    start
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
 
-        <div class="timerCountdown_time-entry">
-          <form>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>
-                    <span class="size">Часы</span>
-                  </th>
-                  <th></th>
-                  <th class="size">
-                    <span>
-                      Минуты
-                    </span>
-                  </th>
-                  <th></th>
-                  <th class="size">
-                    <span>Секунды</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th class="size">
-                    <input type="number" id="hours" min="0" max="24" value="00" />
-                  </th>
-                  <th>
-                    <span>:</span>
-                  </th>
-                  <th class="size">
-                    <input type="number" id="minutes" min="0" max="59" value="00" />
-                  </th>
-                  <th>
-                    <span>:</span>
-                  </th>
-                  <th class="size">
-                    <input type="number" id="seconds" min="0" max="59" value="00" />
-                  </th>
-                </tr>
-              </tbody>
-            </table>
+          <div class="timerCountdown__display-result">
+            <div class="display">
+              <div>
+                <span class="result">
+                  00:00:00
+                </span>
+              </div>
+            </div>
 
             <div class="button">
-              <button data-num='1' class="btn" id="btnCountdown" type="reset">Старт</button>
-            </div>
-
-          </form>
-        </div>
-
-        <div class="timerCountdown__display-result">
-
-          <div class="display">
-            <div class="result">
-
-
+              <button data-num='2' class="btn btn-circle" id="btnReset">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <div class="btnPausePlay">
+                <button data-num='2' class="btn btn-circle" id="btnPause">
+                  <i class="fa-solid fa-pause"></i>
+                </button>
+                <button data-num='3' class="btn btn-circle btn_hide" id="btnPlay">
+                  <i class="fa-solid fa-forward"></i>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="button">
-            <button data-num='2' class="btn btn-circle" id="btnReset">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="btnPausePlay">
-              <button data-num='2' class="btn btn-circle" id="btnPause">
-                <i class="fa-solid fa-pause"></i>
-              </button>
-              <button data-num='3' class="btn btn-circle btn_hide" id="btnPlay">
-                <i class="fa-solid fa-forward"></i>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div> <!-- END wrapper-->
-    </div> <!-- END timerCountdown-->
+        </div> <!-- END wrapper-->
+      </div> <!-- END timerCountdown-->
+    </div><!-- END timers-->
 
   </div>
 

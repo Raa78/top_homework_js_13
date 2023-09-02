@@ -24,7 +24,6 @@ body {
 .container {
   width: 1100px;
   margin: 0 auto;
-
 }
 
 
@@ -37,16 +36,19 @@ body {
 
 /* Aggregate style */
 
+.timers {
+  width: 500px;
+  background: linear-gradient(45deg, #5fe7c0, #52d2e5);
+
+  font-family: Roboto, sans-serif;
+
+  border-radius: 3%;
+}
 
 .timerCountdown {
-  width: 500px;
-
-  /* background-color: rgb(255, 234, 231); */
-  background: linear-gradient(45deg, #5fe7c0, #52d2e5)
 }
 
 .timerCountdown .wrapper {
-  /* width: 350px; */
   padding: 10px;
 
   display: flex;
@@ -56,12 +58,32 @@ body {
 
 .timerCountdown .btn {
   display: flex;
-
   justify-content: center;
-  align-items: center
+  align-items: center;
+
+  background-color: rgba(250, 255, 255, 0);
+  border: 2px solid #fff;
 }
 
+.timerCountdown .btn-circle {
+  width: 50px;
+  height: 50px;
 
+  border-radius: 50%;
+}
+
+.timerCountdown .btn-circle > i {
+  font-size: 30px;
+  color: #fff;
+}
+
+.timerCountdown span {
+  /* Запрещаем выделят текст левой кнопкой */
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 /* Private styles*/
 
@@ -71,35 +93,73 @@ body {
   justify-content: space-evenly;
 }
 
-
-.timerCountdown_time-entry {
+.timerCountdown .timerCountdown_time-entry {
   flex-basis: 100%;
   margin-bottom: 30px;
 }
 
-.timerCountdown_time-entry table th {
+.timerCountdown .timerCountdown_time-entry table {
+  margin-bottom: 20px;
+}
+
+
+
+.timerCountdown .timerCountdown_time-entry table tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timerCountdown .timerCountdown_time-entry table th {
+  overflow: hidden
+  ;
   padding: 5px;
+
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-.timerCountdown_time-entry table th.size {
-  width: 70px;
+.timerCountdown .timerCountdown_time-entry table th.size {
+  width: 115px;
 }
 
-.timerCountdown_time-entry span,
-.timerCountdown_time-entry input {
+.timerCountdown .timerCountdown_time-entry span,
+.timerCountdown .timerCountdown_time-entry input {
   text-align: center;
 
-  font-family: Roboto, sans-serif;
-  color: #fff
-}
+  color: #ffffff;
 
-.timerCountdown_time-entry input {
   background-color: rgba(250, 255, 255, 0);
   border: none;
 }
 
-.timerCountdown__display-result {
+.timerCountdown .timerCountdown_time-entry input {
+  width: 100px;
+
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.timerCountdown .timerCountdown_time-entry .btn {
+  overflow: hidden;
+
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+
+  font-size: 30px;
+  letter-spacing: 2px;
+
+  border-radius: 30px
+}
+
+
+.timerCountdown .timerCountdown__display-result {
   flex-basis: 100%;
+
+  margin-bottom: 30px;
 }
 
 .timerCountdown .display {
@@ -115,29 +175,12 @@ body {
   margin-bottom: 20px;
 }
 
-.timerCountdown__display-result .result {
+.timerCountdown .timerCountdown__display-result .result {
   font-size: 40px;
   font-weight: 800;
 
   color: #fff;
 }
-
-
-.btn-circle {
-  width: 50px;
-  height: 50px;
-
-  background-color: rgba(255, 255, 255, 0);
-
-  border: 2px solid #fff;
-  border-radius: 50%;
-}
-
-.btn-circle > i {
-  font-size: 30px;
-  color: #fff;
-}
-
 
 
 .timerCountdown .btn_hide {
