@@ -17,11 +17,11 @@ function counter(arg) { // путем замыкания делаем незав
 };
 
 let valueTimeCountdown = counter();  // Инициализируем счетчик через функцию с замыканимем
-
+let valueTimeCountdown1 = counter(18000); // тестовое значение, проврека можно ли перадть другой счетчик
 
 let countdown;  // Инициализируем перменную для setInterval()
 
-function timer(addTimerInHTML) {
+function timer(timeCountdown, addTimerInHTML) {
     clearInterval(countdown);
 
     let elem = element.querySelector('.result');
@@ -29,14 +29,14 @@ function timer(addTimerInHTML) {
 
     countdown = setInterval(() => {
 
-        addTimerInHTML(elem, valueTimeCountdown.value());
+        addTimerInHTML(elem, timeCountdown.value());
 
-        if (valueTimeCountdown.value() === 0) {
+        if (timeCountdown.value() === 0) {
             clearInterval(countdown);
             return;
         }
 
-        valueTimeCountdown.operation(-1);
+        timeCountdown.operation(-1);
 
     }, 250)
 }
@@ -68,7 +68,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
         let timeCountdowninSeconds = hours * 3600 + minutes * 60 + seconds;
 
         valueTimeCountdown = counter(timeCountdowninSeconds);
-        timer(addInHTML);
+        timer(valueTimeCountdown, addInHTML);
     }
 
     if (button.id === 'btnReset') {
@@ -94,7 +94,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnPlay') {
         console.log('click Play');
         if (valueTimeCountdown.value() > 0) {  // делаем проверку тймеры > 0, что бы просто так не менять кнопку
-            timer(addInHTML);
+            timer(valueTimeCountdown, addInHTML);
             element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
                 button.classList.toggle('btn_hide');
             });

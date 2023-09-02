@@ -28,7 +28,14 @@ body {
 }
 
 
-/* Timer Countdown */
+/*
+***** Timer Countdown *****
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+/* Aggregate style */
 
 
 .timerCountdown {
@@ -47,11 +54,23 @@ body {
   align-items: center;
 }
 
+.timerCountdown .btn {
+  display: flex;
+
+  justify-content: center;
+  align-items: center
+}
+
+
+
+/* Private styles*/
+
 .timerCountdown .button {
   display: flex;
 
   justify-content: space-evenly;
 }
+
 
 .timerCountdown_time-entry {
   flex-basis: 100%;
@@ -69,12 +88,14 @@ body {
 .timerCountdown_time-entry span,
 .timerCountdown_time-entry input {
   text-align: center;
+
+  font-family: Roboto, sans-serif;
+  color: #fff
 }
 
 .timerCountdown_time-entry input {
   background-color: rgba(250, 255, 255, 0);
   border: none;
-
 }
 
 .timerCountdown__display-result {
