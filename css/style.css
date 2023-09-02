@@ -141,6 +141,8 @@ body {
   font-size: 25px;
   font-weight: 600;
   letter-spacing: 1px;
+
+  outline:none;
 }
 
 .timerCountdown .timerCountdown_time-entry .btn {
