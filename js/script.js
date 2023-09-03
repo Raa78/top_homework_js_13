@@ -100,6 +100,8 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
         let display = '00:00:00';
         element.querySelector('.result span').innerHTML = display;
+
+        element.querySelector('.progressLine').style.setProperty('background', `conic-gradient(#ffffff00 0deg, #fff 0deg)`)
     }
 
 
