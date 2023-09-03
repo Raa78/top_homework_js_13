@@ -16,15 +16,19 @@ function counter(arg) { // путем замыкания делаем незав
     }
 };
 
+
 let valueTimeCountdown = counter();  // Инициализируем счетчик через функцию с замыканимем
 let valueTimeCountdown1 = counter(18000); // тестовое значение, проврека можно ли перадть другой счетчик
 
 let countdown;  // Инициализируем перменную для setInterval()
 
+let startCountdown = 0;
+
 function timer(timeCountdown, addTimerInHTML) {
     clearInterval(countdown);
 
     let elem = element.querySelector('.result');
+    let elem2 = element.querySelector('.progressLine');
 
 
     countdown = setInterval(() => {
@@ -51,6 +55,12 @@ function addInHTML(elem, time) {
     let display = `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
     elem.innerHTML = display;
+
+
+    // let progressLine = (startCountdown - time) * (360 / startCountdown);
+
+
+    // console.log(progressLine);
 }
 
 
@@ -68,6 +78,9 @@ btn.forEach((button) => button.addEventListener('click', () => {
         let timeCountdowninSeconds = hours * 3600 + minutes * 60 + seconds;
 
         valueTimeCountdown = counter(timeCountdowninSeconds);
+
+        startCountdown = valueTimeCountdown.value();
+
         timer(valueTimeCountdown, addInHTML);
     }
 
