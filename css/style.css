@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
 :root {}
 
 
@@ -31,9 +34,6 @@ body {
 /*
 ***** Timer Countdown *****
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
-/* font-family: 'Roboto', sans-serif; */
 
 /* Aggregate style */
 
@@ -159,6 +159,7 @@ body {
 }
 
 
+
 .timerCountdown .timerCountdown__display-result {
   flex-basis: 100%;
 
@@ -166,9 +167,12 @@ body {
 }
 
 .timerCountdown .display {
+  position: relative;
+
   width: 200px;
   height: 200px;
-  border: 3px solid #fff;
+
+  border: 2px solid #fff;
   border-radius: 50%;
 
   display: flex;
@@ -178,11 +182,47 @@ body {
   margin-bottom: 20px;
 }
 
+/* .timerCountdown .display::before {
+  content: '';
+
+  width: 8px;
+  height: 8px;
+  background-color: blue;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 0;
+  margin: -4px;
+} */
+
+.timerCountdown .display .progressLine {
+  position: absolute;
+  width: 104%;
+  height: 104%;
+  /* border-image-source: conic-gradient (red 0deg, #ffffff00 0deg); */
+  background: conic-gradient(#fff 0deg, #ffffff00 0deg);
+  border-radius: 50%;
+  z-index: 1;
+}
+
 .timerCountdown .timerCountdown__display-result .result {
+  width: 98%;
+  height: 98%;
+
+  position: relative;
+  z-index: 2;
+
+  border-radius: 50%;
+  background: linear-gradient(45deg, #5fe7c0, #52d2e5);
+
   font-size: 40px;
   font-weight: 800;
 
   color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .timerCountdown .btn_hide {
