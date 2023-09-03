@@ -28,6 +28,7 @@ function timer(timeCountdown, addTimerInHTML) {
     clearInterval(countdown);
 
     let elem = element.querySelector('.result');
+
     let elem2 = element.querySelector('.progressLine');
 
 
@@ -57,7 +58,7 @@ function addInHTML(elem, time) {
     elem.innerHTML = display;
 
 
-    // let progressLine = (startCountdown - time) * (360 / startCountdown);
+    let progressLine = (startCountdown - time) * (360 / startCountdown);
 
 
     // console.log(progressLine);
