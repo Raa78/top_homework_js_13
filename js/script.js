@@ -27,14 +27,15 @@ let startCountdown = 0;
 function timer(timeCountdown, addTimerInHTML) {
     clearInterval(countdown);
 
-    let elem = element.querySelector('.result');
+    let elem = element.querySelector('.result span');
 
     let elem2 = element.querySelector('.progressLine');
 
 
     countdown = setInterval(() => {
 
-        addTimerInHTML(elem, timeCountdown.value());
+        addTimerInHTML(elem, elem2, timeCountdown.value());
+
 
         if (timeCountdown.value() === 0) {
             clearInterval(countdown);
@@ -47,7 +48,7 @@ function timer(timeCountdown, addTimerInHTML) {
 }
 
 
-function addInHTML(elem, time) {
+function addInHTML(elem, elem2, time) {
 
     let hours = Math.floor(time / 3600);
     let minutes = Math.floor(time / 60 % 60);
@@ -57,11 +58,18 @@ function addInHTML(elem, time) {
 
     elem.innerHTML = display;
 
-
     let progressLine = (startCountdown - time) * (360 / startCountdown);
 
+    elem2.style.setProperty('background', `conic-gradient(#fff ${progressLine}deg, #ffffff00 0deg)`);
 
-    // console.log(progressLine);
+    // let x = startCountdown - time;
+    // let y = 360 / startCountdown;
+
+    // console.log(
+    //     'tartCountdown - time =', x,
+    //     '360 / startCountdown=', y,
+    //     'progressLine=', progressLine,
+    // );
 }
 
 
@@ -91,7 +99,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
         valueTimeCountdown = counter(0);
 
         let display = '00:00:00';
-        element.querySelector('.result').innerHTML = display;
+        element.querySelector('.result span').innerHTML = display;
     }
 
 
