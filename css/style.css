@@ -195,12 +195,13 @@ body {
   margin: -4px;
 } */
 
+
 .timerCountdown .display .progressLine {
   position: absolute;
   width: 103%;
   height: 103%;
-  /* border-image-source: conic-gradient (red 0deg, #ffffff00 0deg); */
-  background: conic-gradient(#fff 0deg, #ffffff00 0deg);
+
+  background: conic-gradient(#ffffff00 0deg, #fff 0deg);
   border-radius: 50%;
   z-index: 1;
 }

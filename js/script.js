@@ -60,7 +60,7 @@ function addInHTML(elem, elem2, time) {
 
     let progressLine = (startCountdown - time) * (360 / startCountdown);
 
-    elem2.style.setProperty('background', `conic-gradient(#fff ${progressLine}deg, #ffffff00 0deg)`);
+    elem2.style.setProperty('background', `conic-gradient(#ffffff00 ${progressLine}deg, #fff 0deg)`);
 
     // let x = startCountdown - time;
     // let y = 360 / startCountdown;
