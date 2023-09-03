@@ -198,7 +198,7 @@ body {
   position: absolute;
   z-index: 3;
 
-  transform: rotate(calc(var(--marker) + 45deg));
+  transform: rotate(calc(var(--marker) + 49deg));
 }
 
 
@@ -207,7 +207,8 @@ body {
   width: 103%;
   height: 103%;
 
-  background: conic-gradient(#ffffff00 0deg, #fff 0deg);
+  /* background: conic-gradient(#ffffff00 0deg, #fff 0deg); */
+  background: conic-gradient(#ffffff00 var(--marker), #fff 0deg);
   border-radius: 50%;
   z-index: 1;
 }

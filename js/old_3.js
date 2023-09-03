@@ -29,9 +29,12 @@ function timer(timeCountdown, addTimerInHTML) {
 
     let elem = element.querySelector('.result span');
 
+    let elem2 = element.querySelector('.progressLine');
+
+
     countdown = setInterval(() => {
 
-        addTimerInHTML(elem, timeCountdown.value());
+        addTimerInHTML(elem, elem2, timeCountdown.value());
 
 
         if (timeCountdown.value() === 0) {
@@ -45,7 +48,7 @@ function timer(timeCountdown, addTimerInHTML) {
 }
 
 
-function addInHTML(elem, time) {
+function addInHTML(elem, elem2, time) {
 
     let hours = Math.floor(time / 3600);
     let minutes = Math.floor(time / 60 % 60);
@@ -55,8 +58,9 @@ function addInHTML(elem, time) {
 
     elem.innerHTML = display;
 
-    let progressLine = startCountdown === 0 ? 0 : (startCountdown - time) * (360 / startCountdown);
-    console.log(360 / startCountdown === Infinity)  // при делении на 0;
+    let progressLine = (startCountdown - time) * (360 / startCountdown);
+
+    // elem2.style.setProperty('background', `conic-gradient(#ffffff00 ${progressLine}deg, #fff 0deg)`);
 
     document.documentElement.style.setProperty('--marker', `${progressLine}deg`);
 }
@@ -69,7 +73,6 @@ btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnCountdown') {
         console.log('click Countdown');
 
-
         let hours = parseInt(document.querySelector('#hours').value);
         let minutes = parseInt(document.querySelector('#minutes').value);
         let seconds = parseInt(document.querySelector('#seconds').value);
@@ -79,8 +82,6 @@ btn.forEach((button) => button.addEventListener('click', () => {
         valueTimeCountdown = counter(timeCountdowninSeconds);
 
         startCountdown = valueTimeCountdown.value();
-
-        console.log(startCountdown);
 
         timer(valueTimeCountdown, addInHTML);
     }
@@ -93,38 +94,29 @@ btn.forEach((button) => button.addEventListener('click', () => {
         let display = '00:00:00';
         element.querySelector('.result span').innerHTML = display;
 
+        // element.querySelector('.progressLine').style.setProperty('background', `conic-gradient(#ffffff00 0deg, #fff 0deg)`);
+
         document.documentElement.style.setProperty('--marker', '0deg');
     }
 
 
     if (button.id === 'btnPause') {
         console.log('click Pause');
-
-
-
         if (valueTimeCountdown.value() > 0) {  // делаем проверку тймеры > 0, что бы просто так не менять кнопку
             clearInterval(countdown);
-
             element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
                 button.classList.toggle('btn_hide');
             });
         }
-
-        // if (valueTimeCountdown.value() === 0) {
-        //     document.documentElement.style.setProperty('--marker', '0deg');
-        // }
     }
 
     if (button.id === 'btnPlay') {
         console.log('click Play');
-
         if (valueTimeCountdown.value() > 0) {  // делаем проверку тймеры > 0, что бы просто так не менять кнопку
             timer(valueTimeCountdown, addInHTML);
-
             element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
                 button.classList.toggle('btn_hide');
             });
-
         }
     }
 
