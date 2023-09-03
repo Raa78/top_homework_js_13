@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap');
 /* font-family: 'Roboto', sans-serif; */
 
-:root {}
+
+:root {
+  --marker: 0deg;
+}
 
 
 html {
@@ -182,18 +185,21 @@ body {
   margin-bottom: 20px;
 }
 
-/* .timerCountdown .display::before {
-  content: '';
+.timerCountdown .display::before {
+  content: '\25CF';
+  font-size: 25px;
+  color: #fff;
 
-  width: 8px;
-  height: 8px;
-  background-color: blue;
-  border-radius: 50%;
+  /* width: 8px;
+  height: 8px; */
+  width: 83%;
+  height: 83%;
 
   position: absolute;
-  top: 0;
-  margin: -4px;
-} */
+  z-index: 3;
+
+  transform: rotate(calc(var(--marker) + 45deg));
+}
 
 
 .timerCountdown .display .progressLine {
