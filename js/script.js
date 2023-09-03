@@ -69,7 +69,6 @@ btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnCountdown') {
         console.log('click Countdown');
 
-
         let hours = parseInt(document.querySelector('#hours').value);
         let minutes = parseInt(document.querySelector('#minutes').value);
         let seconds = parseInt(document.querySelector('#seconds').value);
@@ -87,6 +86,7 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
     if (button.id === 'btnReset') {
         console.log('click Reset');
+
         clearInterval(countdown);
         valueTimeCountdown = counter(0);
 
@@ -100,19 +100,15 @@ btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnPause') {
         console.log('click Pause');
 
-
-
         if (valueTimeCountdown.value() > 0) {  // делаем проверку тймеры > 0, что бы просто так не менять кнопку
             clearInterval(countdown);
 
             element.querySelectorAll('.btnPausePlay .btn').forEach((button) => {
                 button.classList.toggle('btn_hide');
             });
+
         }
 
-        // if (valueTimeCountdown.value() === 0) {
-        //     document.documentElement.style.setProperty('--marker', '0deg');
-        // }
     }
 
     if (button.id === 'btnPlay') {
