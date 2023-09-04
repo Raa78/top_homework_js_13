@@ -136,7 +136,6 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
 
 element.querySelectorAll('.timers__tabs .tab').forEach((tab) => tab.addEventListener('click', () => {
-    console.log(tab);
 
     element.querySelectorAll('.timers__tabs .tab').forEach((tab1) =>  {
         tab1.classList.remove('active');
