@@ -56,7 +56,6 @@ function addInHTML(elem, time) {
     elem.innerHTML = display;
 
     let progressLine = startCountdown === 0 ? 0 : (startCountdown - time) * (360 / startCountdown);
-    console.log(360 / startCountdown === Infinity)  // при делении на 0;
 
     document.documentElement.style.setProperty('--marker', `${progressLine}deg`);
 }
