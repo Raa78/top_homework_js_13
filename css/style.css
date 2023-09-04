@@ -50,6 +50,11 @@ body {
   border-radius: 3%;
 }
 
+.timers .timers__tabs .tab.active {
+  background-color: rgb(95 231 192);
+
+  transition: all 0.3s ease;
+}
 
 .timerCountdown {
 }

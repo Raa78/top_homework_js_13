@@ -1,6 +1,7 @@
 'use strict'
 
-const element = document.querySelector('.timerCountdown');
+// const element = document.querySelector('.timerCountdown');
+const element = document.querySelector('.timers');
 
 
 function counter(arg) { // путем замыкания делаем независисимые счетчики
