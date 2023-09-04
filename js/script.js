@@ -68,20 +68,23 @@ btn.forEach((button) => button.addEventListener('click', () => {
     if (button.id === 'btnCountdown') {
         console.log('click Countdown');
 
-        let hours = parseInt(document.querySelector('#hours').value);
-        let minutes = parseInt(document.querySelector('#minutes').value);
-        let seconds = parseInt(document.querySelector('#seconds').value);
+        let hours = document.querySelector('#hours').value == '' ? 0 : parseInt(document.querySelector('#hours').value);
+        let minutes = document.querySelector('#minutes').value == '' ? 0 : parseInt(document.querySelector('#minutes').value);
+        let seconds = document.querySelector('#seconds').value == '' ? 0 : parseInt(document.querySelector('#seconds').value);
 
         let timeCountdowninSeconds = hours * 3600 + minutes * 60 + seconds;
 
         valueTimeCountdown = counter(timeCountdowninSeconds);
 
         startCountdown = valueTimeCountdown.value();
+        console.log(startCountdown);
 
-        element.querySelector('.timerCountdown_time-entry').classList.toggle('section_hide');
-        element.querySelector('.timerCountdown__display-result').classList.toggle('section_hide');
+        if (startCountdown > 0) {
+            element.querySelector('.timerCountdown_time-entry').classList.toggle('section_hide');
+            element.querySelector('.timerCountdown__display-result').classList.toggle('section_hide');
 
-        timer(valueTimeCountdown, addInHTML);
+            timer(valueTimeCountdown, addInHTML);
+        }
 
     }
 
