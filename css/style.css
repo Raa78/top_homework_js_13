@@ -89,6 +89,10 @@ body {
   user-select: none;
 }
 
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
 /* Private styles*/
 
 .timerCountdown .button {
