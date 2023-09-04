@@ -121,10 +121,14 @@ body {
   padding: 15px  10px 10px 10px;
 
   cursor: pointer;
+
+  transition: all 0.3s ease;
 }
 
 .timers__tabs .tab:hover {
-  background-color: rgb(95 231 192)
+  background-color: rgb(95 231 192);
+
+  transition: all 0.3s ease;
 }
 
 .timers__tabs .tab.tabs__alarm {
