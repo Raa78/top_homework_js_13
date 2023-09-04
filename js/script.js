@@ -103,7 +103,6 @@ btn.forEach((button) => button.addEventListener('click', () => {
         element.querySelector('.timerCountdown__display-result').classList.toggle('section_hide');
     }
 
-
     if (button.id === 'btnPause') {
         console.log('click Pause');
 
