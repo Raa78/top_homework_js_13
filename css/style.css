@@ -194,13 +194,13 @@ body {
   font-size: 25px;
   color: #fff;
 
-  width: 83%;
-  height: 83%;
+  width: 84%;
+  height: 84%;
 
   position: absolute;
   z-index: 3;
 
-  transform: rotate(calc(var(--marker) + 49deg));
+  transform: rotate(calc(var(--marker) + 50deg));
 }
 
 
@@ -216,8 +216,8 @@ body {
 }
 
 .timerCountdown .timerCountdown__display-result .result {
-  width: 98%;
-  height: 98%;
+  width: 99%;
+  height: 99%;
 
   position: relative;
   z-index: 2;

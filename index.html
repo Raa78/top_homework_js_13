@@ -20,11 +20,15 @@
 
     <div class="timers">
 
+      <div class="timers__tabs">
+        <div class="tabs__alarm"></div>
+        <div class="tabs__timerCountdown"></div>
+        <div class="tabs__stopwatch"></div>
+      </div>
+
+
       <div class="timerCountdown">
         <div class="wrapper">
-
-          <div class="timerCountdown_header">
-          </div>
 
           <div class="timerCountdown_time-entry">
             <form>
@@ -57,19 +61,19 @@
                 <tbody>
                   <tr>
                     <th class="size">
-                      <input type="number" id="hours" min="0" max="24" placeholder="00"/>
+                      <input type="number" id="hours" min="0" max="24" placeholder="00" />
                     </th>
                     <th>
                       <span>:</span>
                     </th>
                     <th class="size">
-                      <input type="number" id="minutes" min="0" max="59" placeholder="00"/>
+                      <input type="number" id="minutes" min="0" max="59" placeholder="00" />
                     </th>
                     <th>
                       <span>:</span>
                     </th>
                     <th class="size">
-                      <input type="number" id="seconds" min="0" max="59" placeholder="00"/>
+                      <input type="number" id="seconds" min="0" max="59" placeholder="00" />
                     </th>
                   </tr>
                 </tbody>
@@ -112,6 +116,7 @@
 
         </div> <!-- END wrapper-->
       </div> <!-- END timerCountdown-->
+
     </div><!-- END timers-->
 
   </div>
