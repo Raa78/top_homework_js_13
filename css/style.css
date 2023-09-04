@@ -51,9 +51,7 @@ body {
 }
 
 .timers .timers__tabs .tab.active {
-  background-color: rgb(95 231 192);
-
-  transition: all 0.3s ease;
+  background-color: #00aad2 ;
 }
 
 .timerCountdown {
@@ -115,8 +113,10 @@ body {
 
 .timers__tabs .tab {
   flex-basis: 33.33334%;
+
   width: 100%;
   height: 100%;
+  background-color: #04cbda;
 
   display: flex;
   flex-direction: column;
