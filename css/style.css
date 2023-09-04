@@ -190,8 +190,6 @@ body {
   font-size: 25px;
   color: #fff;
 
-  /* width: 8px;
-  height: 8px; */
   width: 83%;
   height: 83%;
 
@@ -235,4 +233,9 @@ body {
 
 .timerCountdown .btn_hide {
   display: none;
+}
+
+
+.timerCountdown .section_hide {
+  opacity: 0;
 }

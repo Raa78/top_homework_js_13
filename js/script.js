@@ -79,9 +79,11 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
         startCountdown = valueTimeCountdown.value();
 
-        console.log(startCountdown);
+        element.querySelector('.timerCountdown_time-entry').classList.toggle('section_hide');
+        element.querySelector('.timerCountdown__display-result').classList.toggle('section_hide');
 
         timer(valueTimeCountdown, addInHTML);
+
     }
 
     if (button.id === 'btnReset') {
@@ -94,6 +96,9 @@ btn.forEach((button) => button.addEventListener('click', () => {
         element.querySelector('.result span').innerHTML = display;
 
         document.documentElement.style.setProperty('--marker', '0deg');
+
+        element.querySelector('.timerCountdown_time-entry').classList.toggle('section_hide');
+        element.querySelector('.timerCountdown__display-result').classList.toggle('section_hide');
     }
 
 
