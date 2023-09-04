@@ -42,6 +42,7 @@ body {
 
 .timers {
   width: 500px;
+  height: 650px;
   background: linear-gradient(45deg, #5fe7c0, #52d2e5);
 
   font-family: Roboto, sans-serif;
@@ -99,6 +100,7 @@ body {
 ::-webkit-input-placeholder {
   color: #fff;
 }
+
 
 /* Private styles*/
 
@@ -292,10 +294,14 @@ body {
   align-items: center;
 }
 
-.timerCountdown .btn_hide {
+
+.timers .show_timer {
   display: none;
 }
 
+.timerCountdown .btn_hide {
+  display: none;
+}
 
 .timerCountdown .section_hide {
   opacity: 0;
