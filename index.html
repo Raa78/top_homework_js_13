@@ -21,11 +21,11 @@
     <div class="timers">
 
       <div class="timers__tabs">
-        <div class="tab tabs__alarm">
+        <div data-name='timerAlarm' class="tab tabs__alarm">
           <i class="fa-solid fa-clock"></i>
           <span>Alarm</span>
         </div>
-        <div class="tab tabs__timerCountdown">
+        <div class="tab tabs__timerCountdown active">
           <i class="fa-solid fa-hourglass-start"></i>
           <span>Timer</span>
         </div>
@@ -35,7 +35,10 @@
         </div>
       </div>
 
-      <div class="timerAlarm">
+      <div class="timerAlarm show_timer">
+        <div class="plug">
+          <img src="./img/under_construction.png" alt="">
+        </div>
       </div> <!-- END "timerAlarm" -->
 
       <div class="timerCountdown">
@@ -91,7 +94,7 @@
               </table>
 
               <div class="button">
-                <button data-num='1' class="btn" id="btnCountdown" type="reset">
+                <button class="btn" id="btnCountdown" type="reset">
                   <span>
                     start
                   </span>
@@ -111,11 +114,11 @@
             </div>
 
             <div class="button">
-              <button data-num='2' class="btn btn-circle" id="btnReset">
+              <button class="btn btn-circle" id="btnReset">
                 <i class="fa-solid fa-xmark"></i>
               </button>
               <div class="btnPausePlay">
-                <button data-num='2' class="btn btn-circle" id="btnPause">
+                <button class="btn btn-circle" id="btnPause">
                   <i class="fa-solid fa-pause"></i>
                 </button>
                 <button data-num='3' class="btn btn-circle btn_hide" id="btnPlay">

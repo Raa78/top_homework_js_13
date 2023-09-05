@@ -32,10 +32,7 @@ function timer(timeCountdown, addTimerInHTML) {
 
     countdown = setInterval(() => {
 
-        // addTimerInHTML(elem, timeCountdown.value());
-
-
-        if (timeCountdown.value() === 0) {
+         if (timeCountdown.value() === 0) {
             clearInterval(countdown);
             return;
         }
@@ -144,10 +141,17 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
 element.querySelectorAll('.timers__tabs .tab').forEach((tab) => tab.addEventListener('click', () => {
 
-    element.querySelectorAll('.timers__tabs .tab').forEach((tab1) =>  {
+    element.querySelectorAll('.timers__tabs .tab').forEach((tab1) => {
         tab1.classList.remove('active');
     });
     tab.classList.toggle('active');
 
 })
 );
+
+
+element.querySelectorAll('.timers__tabs .tab').forEach((tab) => {
+    tab.addEventListener('click', (event) => {
+        console.log(event.target.dataset)
+    })
+});
