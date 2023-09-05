@@ -55,8 +55,6 @@ body {
   background-color: #00aad2;
 }
 
-.timerCountdown {}
-
 .timerCountdown .wrapper {
   padding: 10px;
 
@@ -148,7 +146,6 @@ body {
 .timers__tabs .tab>i {
   font-size: 50px;
   margin-bottom: 15px;
-
 }
 
 .timers__tabs .tab>span {
@@ -170,7 +167,6 @@ body {
 .timerCountdown .timerCountdown_time-entry table {
   margin-bottom: 20px;
 }
-
 
 
 .timerCountdown .timerCountdown_time-entry table tr {
@@ -224,7 +220,6 @@ body {
 
   border-radius: 30px
 }
-
 
 
 .timerCountdown .timerCountdown__display-result {
