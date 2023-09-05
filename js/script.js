@@ -1,6 +1,6 @@
 'use strict'
 
-// const element = document.querySelector('.timerCountdown');
+const audio = new Audio('alarm.mp3');
 const element = document.querySelector('.timers');
 
 
@@ -32,7 +32,7 @@ function timer(timeCountdown, addTimerInHTML) {
 
     countdown = setInterval(() => {
 
-        addTimerInHTML(elem, timeCountdown.value());
+        // addTimerInHTML(elem, timeCountdown.value());
 
 
         if (timeCountdown.value() === 0) {
@@ -41,6 +41,12 @@ function timer(timeCountdown, addTimerInHTML) {
         }
 
         timeCountdown.operation(-1);
+
+        addTimerInHTML(elem, timeCountdown.value());
+
+        if (timeCountdown.value() === 0) {
+            audio.play();
+        }
 
     }, 1000)
 }
@@ -100,6 +106,8 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
         document.documentElement.style.setProperty('--marker', '0deg');
 
+        audio.pause();
+
         element.querySelector('.timerCountdown_time-entry').classList.toggle('section_hide');
         element.querySelector('.timerCountdown__display-result').classList.toggle('section_hide');
     }
@@ -133,7 +141,6 @@ btn.forEach((button) => button.addEventListener('click', () => {
 
 })
 );
-
 
 element.querySelectorAll('.timers__tabs .tab').forEach((tab) => tab.addEventListener('click', () => {
 
