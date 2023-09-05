@@ -139,19 +139,35 @@ btn.forEach((button) => button.addEventListener('click', () => {
 })
 );
 
-element.querySelectorAll('.timers__tabs .tab').forEach((tab) => tab.addEventListener('click', () => {
-
-    element.querySelectorAll('.timers__tabs .tab').forEach((tab1) => {
-        tab1.classList.remove('active');
-    });
-    tab.classList.toggle('active');
-
-})
-);
-
-
 element.querySelectorAll('.timers__tabs .tab').forEach((tab) => {
+
     tab.addEventListener('click', (event) => {
-        console.log(event.target.dataset)
+        element.querySelectorAll('.timers__tabs .tab').forEach((tab1) => {
+            tab1.classList.remove('active');
+        });
+
+        tab.classList.toggle('active');
+
+        if(event.currentTarget.dataset.name == 'timerAlarm') {
+            console.log(event.currentTarget.dataset.name);
+            element.querySelector('.timerAlarm').classList.remove('show_timer');
+            element.querySelector('.timerCountdown').classList.add('show_timer');
+            element.querySelector('.timerStopwatch').classList.add('show_timer');
+        }
+
+        if(event.currentTarget.dataset.name == 'timerCountdown') {
+            console.log(event.currentTarget.dataset.name);
+            element.querySelector('.timerAlarm').classList.add('show_timer');
+            element.querySelector('.timerCountdown').classList.remove('show_timer');
+            element.querySelector('.timerStopwatch').classList.add('show_timer');
+        }
+
+        if(event.currentTarget.dataset.name == 'timerStopwatch') {
+            console.log(event.currentTarget.dataset.name);
+            element.querySelector('.timerAlarm').classList.add('show_timer');
+            element.querySelector('.timerCountdown').classList.add('show_timer');
+            element.querySelector('.timerStopwatch').classList.remove('show_timer');
+        }
     })
+
 });

@@ -52,11 +52,10 @@ body {
 }
 
 .timers .timers__tabs .tab.active {
-  background-color: #00aad2 ;
+  background-color: #00aad2;
 }
 
-.timerCountdown {
-}
+.timerCountdown {}
 
 .timerCountdown .wrapper {
   padding: 10px;
@@ -84,7 +83,7 @@ body {
   border-radius: 50%;
 }
 
-.timerCountdown .btn-circle > i {
+.timerCountdown .btn-circle>i {
   font-size: 30px;
   color: #fff;
 }
@@ -125,7 +124,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 15px  10px 10px 10px;
+  padding: 15px 10px 10px 10px;
 
   cursor: pointer;
 
@@ -146,13 +145,13 @@ body {
   border-start-end-radius: 13%;
 }
 
-.timers__tabs .tab > i {
+.timers__tabs .tab>i {
   font-size: 50px;
   margin-bottom: 15px;
 
 }
 
-.timers__tabs .tab > span {
+.timers__tabs .tab>span {
   font-size: 20px;
   letter-spacing: 1px;
 }
@@ -181,8 +180,7 @@ body {
 }
 
 .timerCountdown .timerCountdown_time-entry table th {
-  overflow: hidden
-  ;
+  overflow: hidden;
   padding: 5px;
 
   font-size: 25px;
@@ -211,7 +209,7 @@ body {
   font-weight: 600;
   letter-spacing: 1px;
 
-  outline:none;
+  outline: none;
 }
 
 .timerCountdown .timerCountdown_time-entry .btn {
@@ -310,11 +308,16 @@ body {
   height: 530px;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.timers .plug > img {
+.timers .plug > span {
+  font-size: 30px;
+}
+
+.timers .plug>img {
   width: 360px;
   height: 300px;
 }
